@@ -1,2 +1,5 @@
+def do_some_stuff():
+    return True
+
 if __name__ == '__main__':
-    print_hi('I am a waste of CPU time.')
+    print('I am a waste of CPU time.')
