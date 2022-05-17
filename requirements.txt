@@ -1,0 +1,7 @@
+# Code quality & Pre-Commit
+# ------------------------------------------------------------------------------
+flake8==4.0.1  # https://github.com/PyCQA/flake8
+flake8-isort==4.1.1  # https://github.com/gforcada/flake8-isort
+coverage==6.0.2  # https://github.com/nedbat/coveragepy
+black==21.9b0  # https://github.com/psf/black
+pre-commit==2.15.0  # https://github.com/pre-commit/pre-commit
