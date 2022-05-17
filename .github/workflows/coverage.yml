@@ -26,6 +26,15 @@ jobs:
         run: |
           pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=app tests/ | tee pytest-coverage.txt
 
+      - name: Read Pytest-coverage.txt
+        id: package
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./pytest-coverage.txt
+
+      - name: Echo Pytest-coverage.txt
+        run: echo "${{ steps.package.outputs.content }}"
+
       - name: Pytest coverage comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
@@ -34,7 +43,7 @@ jobs:
           badge-title: My Badge Coverage Title
           hide-badge: false
           hide-report: false
-          create-new-comment: false
+          create-new-comment: true
           hide-comment: false
           report-only-changed-files: false
           junitxml-path: pytest.xml
